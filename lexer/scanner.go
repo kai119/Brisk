@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"bytes"
 	"io"
+	"strings"
+	"unicode"
 )
 
 type Scanner struct {
@@ -34,7 +36,7 @@ func (s *Scanner) Scan() (tok TokenType, lit string) {
 		return s.scanWhitespace()
 	} else if isChar(ch) || isSpecial(ch) {
 		s.unread()
-		return s.scanIndent()
+		return s.scanIdent()
 	}
 
 	switch ch {
@@ -92,6 +94,61 @@ func (s *Scanner) scanWhitespace() (tok TokenType, lit string) {
 
 //TODO scanIndent
 
-func (s *Scanner) scanIndent() (tok TokenType, lit string) {
-	return TOKEN_ERROR, ""
+func (s *Scanner) scanIdent() (tok TokenType, lit string) {
+	var buf bytes.Buffer
+	buf.WriteRune(s.Read())
+
+	for {
+		if ch := s.Read(); ch == eof {
+			break
+		} else if !isChar(ch) && !unicode.IsDigit(ch) && !isSpecial(ch) && ch != '_' && ch != '-' {
+			s.unread()
+			break
+		} else {
+			_, _ = buf.WriteRune(ch)
+		}
+	}
+
+	switch strings.ToUpper(buf.String()) {
+	case "IF":
+		return TOKEN_COMMAND_IF, buf.String()
+	case "FOR":
+		return TOKEN_COMMAND_FOR, buf.String()
+	case "VAR":
+		return TOKEN_VAR_DECLARATION, buf.String()
+	case "CONST":
+		return TOKEN_CONST, buf.String()
+	case "WHILE":
+		return TOKEN_COMMAND_WHILE, buf.String()
+	case "INT":
+		return TOKEN_TYPE_INT, buf.String()
+	case "STR":
+		return TOKEN_TYPE_STRING, buf.String()
+	case "BOOL":
+		return TOKEN_TYPE_BOOL, buf.String()
+	case "FLOAT":
+		return TOKEN_TYPE_FLOAT, buf.String()
+	case "DOUBLE":
+		return TOKEN_TYPE_DOUBLE, buf.String()
+	case "CHAR":
+		return TOKEN_TYPE_CHAR, buf.String()
+	case "FUNC":
+		return TOKEN_COMMAND_FUNC, buf.String()
+	case "=":
+		return TOKEN_VAR_EQUALS, buf.String()
+	case "==":
+		return TOKEN_CONDITION_EQUALS, buf.String()
+	case "<":
+		return TOKEN_CONDITION_LESS_THAN, buf.String()
+	case "<=":
+		return TOKEN_CONDITION_LESS_THAN_EQUAL, buf.String()
+	case ">":
+		return TOKEN_CONDITION_MORE_THAN, buf.String()
+	case ">=":
+		return TOKEN_CONDITION_MORE_THAN_EQUAL, buf.String()
+	case "!=":
+		return TOKEN_CONDITION_NOT_EQUAL, buf.String()
+	}
+
+	return TOKEN_IDENT, buf.String()
 }
