@@ -1,0 +1,57 @@
+sudo: required
+language: go
+go:
+  - "1.14.1"
+
+services: docker
+
+stages:
+  - "Linting"
+  - "Unit Testing"
+  - "System Tests"
+  - name: "Build Release"
+    if: branch = master AND (NOT (type = pull_request))
+
+before_install:
+  - sudo chown -R travis:travis /home/travis/
+  - export MAJOR_MINOR_REVISION="major"
+  - sudo -H apt-get -y install python3
+  - sudo -H pip install robotframework
+
+jobs:
+  include:
+  - stage: "Linting"
+    script: cd $TRAVIS_BUILD_DIR
+    script: ./run_static_analysis.sh
+  - stage: "Unit Testing"
+    script: ./run_unit_tests.sh
+  - stage: "System Tests"
+    script: 
+      - cd $TRAVIS_BUILD_DIR
+      - mkdir tests/results
+      - robot -d tests/results tests/scripts
+  - stage: "Build Release"
+    script:
+      - cd $TRAVIS_BUILD_DIR
+      - sudo mkdir -p build/brisk/bin
+      - $(cd src/brisk && go build -o brisk main.go)
+      - sudo cp src/brisk/brisk build/brisk/bin
+      - sudo cp README.md build
+    deploy:
+      provider: releases
+      api_key: $AUTH_TOKEN
+      file: "${TRAVIS_BUILD_DIR}/build/brisk-${TRAVIS_TAG}-linux.tar.gz"
+      skip_cleanup: true
+      on:
+        branch: master
+
+before_deploy:
+  - cd $TRAVIS_BUILD_DIR
+  - git config --local user.name "Kai-Mumford-CIC-UK"
+  - git config --local user.email "kai.mumford-cic-uk@ibm.com"
+  - source scripts/get-tag.sh
+  - echo travis tag $TRAVIS_TAG
+  - git tag $TRAVIS_TAG
+  - cd $TRAVIS_BUILD_DIR/build
+  - sudo tar -cvzf brisk-${TRAVIS_TAG}-linux.tar.gz *
+  - cd /home/travis/

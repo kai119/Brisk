@@ -1,0 +1,2 @@
+Hello! This is the BRISK programming language!
+Type in any BRISK commands below

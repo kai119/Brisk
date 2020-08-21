@@ -1,0 +1,13 @@
+Hello! This is the BRISK programming language!
+Type in any BRISK commands below
+
+{Type:if Literal:if}
+{Type:( Literal:(}
+{Type:INT Literal:5}
+{Type:< Literal:<}
+{Type:INT Literal:10}
+{Type:) Literal:)}
+{Type:{ Literal:{}
+{Type:return Literal:return}
+{Type:true Literal:true}
+{Type:} Literal:}}

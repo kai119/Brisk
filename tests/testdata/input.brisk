@@ -1,0 +1,8 @@
+func(first int, second str) {
+    if first == 1 or str == "test" {
+        return "this is a test"
+    } else {
+        return "this is another test"
+    }
+    return first, second
+}

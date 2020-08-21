@@ -1,0 +1,36 @@
+run:
+  deadline: 30s
+  tests: true
+
+linters-settings:
+  golint:
+    min-confidence: 0.8
+
+linters:
+  enable:
+    - golint
+    - dogsled
+    - dupl
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - goprintffuncname
+    - gosec
+    - interfacer
+    - lll
+    - maligned
+    - misspell
+    - scopelint
+    - unconvert
+    - whitespace
+  enable-all: false
+
+issues:
+  exclude-use-default: false
+
+  exclude:
+    - "ALL_CAPS in Go names"
+    - "exported const [A-Z]* should have comment"
+    - "rewrite if-else to switch statement"

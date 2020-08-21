@@ -1,0 +1,12 @@
+Usage:	brisk repl [-c command list [-i]]
+
+REPL starts the BRISK REPL
+the REPL allows you to start a BRISK shell from the command
+line. This will take BRISK code one line at a time, evaluate
+the result of that line, and return the result to the console.
+To exit the REPL, type "exit" or press Ctl+C
+
+Command Arguments:
+	-c [command list]:	A list of commands to run inside of the repl
+	-i:	REPL won't exit after -c commands are processed
+
