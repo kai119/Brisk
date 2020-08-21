@@ -39,7 +39,8 @@ jobs:
       - sudo cp README.md build
     deploy:
       provider: releases
-      api_key: $AUTH_TOKEN
+      api_key: 
+        secure: $AUTH_TOKEN
       file: "${TRAVIS_BUILD_DIR}/build/brisk-${TRAVIS_TAG}-linux.tar.gz"
       skip_cleanup: true
       on:
