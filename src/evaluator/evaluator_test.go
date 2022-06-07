@@ -3,9 +3,9 @@ package evaluator
 import (
 	"testing"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/evaluator/object"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/parser"
+	"github.com/kai119/Brisk/src/evaluator/object"
+	"github.com/kai119/Brisk/src/lexer"
+	"github.com/kai119/Brisk/src/parser"
 )
 
 func TestEvalIntegerExpression(t *testing.T) {

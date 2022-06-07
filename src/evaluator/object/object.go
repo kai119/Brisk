@@ -6,7 +6,7 @@ import (
 	"hash/fnv"
 	"strings"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/parser/ast"
+	"github.com/kai119/Brisk/src/parser/ast"
 )
 
 // Type represents the type of an object

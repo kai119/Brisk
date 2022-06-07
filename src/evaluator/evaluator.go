@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/evaluator/object"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/parser/ast"
+	"github.com/kai119/Brisk/src/evaluator/object"
+	"github.com/kai119/Brisk/src/parser/ast"
 )
 
 // Finite reference values

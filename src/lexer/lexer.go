@@ -1,6 +1,6 @@
 package lexer
 
-import "github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer/token"
+import "github.com/kai119/Brisk/src/lexer/token"
 
 // Lexer is a struct that contains information on the string that was inputted,
 // the position of the pointer in the string, the read position of the next character in the string

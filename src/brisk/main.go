@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/brisk/base"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/brisk/repl"
+	"github.com/kai119/Brisk/src/brisk/base"
+	"github.com/kai119/Brisk/src/brisk/repl"
 )
 
 func init() {

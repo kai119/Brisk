@@ -3,7 +3,7 @@ package evaluator
 import (
 	"fmt"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/evaluator/object"
+	"github.com/kai119/Brisk/src/evaluator/object"
 )
 
 var builtins = map[string]*object.Builtin{

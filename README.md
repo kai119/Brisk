@@ -11,7 +11,7 @@ navigate to the root of the BRISK folder and run the command
 
 ## Download and Install
 
-To install BRISK, download the desired release version from https://github.ibm.com/Kai-Mumford-CIC-UK/brisk/releases.
+To install BRISK, download the desired release version from https://github.com/kai119/Brisk/releases.
 
 Once downloaded, extract it to */usr/local*, using a command like:
 

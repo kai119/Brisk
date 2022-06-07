@@ -3,7 +3,7 @@ package lexer
 import (
 	"testing"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer/token"
+	"github.com/kai119/Brisk/src/lexer/token"
 )
 
 func TestNextToken(t *testing.T) {

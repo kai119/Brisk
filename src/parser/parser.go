@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strconv"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer/token"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/parser/ast"
+	"github.com/kai119/Brisk/src/lexer"
+	"github.com/kai119/Brisk/src/lexer/token"
+	"github.com/kai119/Brisk/src/parser/ast"
 )
 
 type (

@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer/token"
+	"github.com/kai119/Brisk/src/lexer/token"
 )
 
 // Node represents a node on the AST. It contains the token literal for that node

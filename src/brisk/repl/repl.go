@@ -7,12 +7,12 @@ import (
 	"os"
 	"strings"
 
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/brisk/base"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/evaluator"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/evaluator/object"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/lexer/token"
-	"github.ibm.com/Kai-Mumford-CIC-UK/brisk/src/parser"
+	"github.com/kai119/Brisk/src/brisk/base"
+	"github.com/kai119/Brisk/src/evaluator"
+	"github.com/kai119/Brisk/src/evaluator/object"
+	"github.com/kai119/Brisk/src/lexer"
+	"github.com/kai119/Brisk/src/lexer/token"
+	"github.com/kai119/Brisk/src/parser"
 )
 
 // PROMPT is the string that shall appear on each line of the REPL before user input
