@@ -2,6 +2,13 @@
 
 BRISK is a simple and fast interpreted programming language.
 
+## Running the source code
+
+To run BRISK directly from source code, first go to https://golang.org/dl/ and follow the instructions to install golang on your operating system.
+
+navigate to the root of the BRISK folder and run the command 
+`go run src/brisk/main.go repl` to start the repl
+
 ## Download and Install
 
 To install BRISK, download the desired release version from https://github.ibm.com/Kai-Mumford-CIC-UK/brisk/releases.
